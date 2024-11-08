@@ -55,7 +55,7 @@
             top: 10px;
             cursor: pointer;
             font-size: 18px;
-            color: #9bb9d6;
+            color: #333;
         }
         .remember-me {
             display: flex;
@@ -99,25 +99,39 @@
             font-size: 14px;
             color: #9bb9d6;
         }
-    </style>
-    <script>
-        function togglePasswordVisibility() {
-            const passwordField = document.getElementById('password');
-            const eyeIcon = document.getElementById('eye-icon');
-            if (passwordField.type === 'password') {
-                passwordField.type = 'text';
-                eyeIcon.textContent = '🙈';
-            } else {
-                passwordField.type = 'password';
-                eyeIcon.textContent = '👁️';
-            }
+        .google-signin-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: 15px;
+            padding: 12px;
+            background-color: white;
+            color: black;
+            font-weight: 500;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+            gap: 12px; /* Adjust space between the Google logo and the text */
         }
-    </script>
+        .google-signin-btn:hover {
+            /* background-color: #eee; */
+            /* padding: 20px; */
+        }
+        .google-signin-btn img {
+            width: 20px; /* Adjust the size of the Google logo */
+            height: 20px;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 <body>
     <div class="login-container">
         <img src="assets/img/users.png" alt="Users Logo">
-        <h2>Sign in</h2>
+        <h2>Sign In</h2>
         <form id="loginForm" method="POST" action="index.php">
             <div class="form-group">
                 <input type="text" id="username" name="username" placeholder="Username" required>
@@ -134,6 +148,21 @@
                 <a href="forgot_password.php">Forgot Password?</a>
             </div>
             <button type="submit" class="btn">Login</button>
+
+            <style>
+                .google-signin-btn{
+                    display:flex;
+                    margin: auto
+                }
+                .google-signin-btn img{
+                    margin-top: 18px;
+                }
+            </style>
+            <!-- Google Sign In Button -->
+            <button class="google-signin-btn">
+                <img src="assets/img/google.svg" alt="Google Logo"> 
+                <span>Sign in with Google</span>
+            </button>
         </form>
         <div class="sign-up">
             <span>Don't have an account? <a href="signup.php">Sign Up</a></span>
@@ -145,6 +174,19 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Tawk.to Script -->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/672e76b34304e3196adf74b9/1ic6nvdij';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
     </script>
 </body>
 </html>
